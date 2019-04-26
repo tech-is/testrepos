@@ -13,6 +13,14 @@ if (isset($_POST ['confirm'])) {    //データがセットされていたら各
         $error_message[] = "名前を入力してください<br>";
     }
 
+    if ($_POST ['name']!=="" AND strlen($_POST['name'])<=32) {
+      $name = htmlspecialchars($_POST['name'],ENT_QUOTES);
+    }elseif(strlen($_POST['name'])>32){
+      $error_message[] = "文字数が多すぎます（全角16字以内にして下さい）。<br>";
+    }elseif(empty($_POST['name'])){
+      $error_message[] = "名前を入力してください<br>";
+  }
+
     if ($_POST['email']!=="") {
         $email = htmlspecialchars($_POST['email'],ENT_QUOTES);
     }else{
@@ -80,8 +88,9 @@ if (count($error_message)) {
 	</div>
 
 	<button type="submit" name="btn_back" value="戻る">戻る</button>
-	<button type="submit" name="btn_submit" value="送信">送信</button>
-	<input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
+	<button type="submit" name="btn_submit" value="送信">送信</button> 
+	
+  <input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
   <input type="hidden" name="kana" value="<?php echo $_POST['kana']; ?>">
   <input type="hidden" name="telephone" value="<?php echo $_POST['telephone']; ?>">
   <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>">
@@ -94,7 +103,7 @@ if (count($error_message)) {
 <?php }elseif( $page_flag === 2 ){ ?>
 
 <p>送信が完了しました。</p>
-
+<p></p>
 
 <?php }else{ ?>
 
