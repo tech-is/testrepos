@@ -12,4 +12,6 @@ echo "gitの練習nowです";
 
 echo "ブランチを切り替えての再挑戦";
 
+echo "ナカツカstyle";
+
 ?>
