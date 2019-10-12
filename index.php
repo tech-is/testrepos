@@ -15,4 +15,6 @@ echo "衝突テスト";
 
 echo "ナカツカstyle";
 
+echo "Readに変更した状態";
+
 ?>
