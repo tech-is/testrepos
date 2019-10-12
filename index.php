@@ -11,6 +11,7 @@ echo "こんにちはなかつかです";
 echo "gitの練習nowです";
 
 echo "ブランチを切り替えての再挑戦";
+echo "衝突テスト";
 
 echo "ナカツカstyle";
 
